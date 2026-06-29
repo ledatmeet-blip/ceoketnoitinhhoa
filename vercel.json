@@ -12,7 +12,7 @@
       "dest": "/images/$1"
     },
     {
-      "src": "/lamour-marketing-plan.html",
+      "src": "/",
       "dest": "/lamour-marketing-plan.html"
     },
     {
@@ -21,7 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/lamour-marketing-plan.html"
     }
   ]
 }
