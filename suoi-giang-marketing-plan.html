@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kế Hoạch AI Marketing 6 Tháng — Suối Giàng Dragon Legend Tea Resort</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --forest: #1a2e1a;
+    --forest2: #243824;
+    --tea: #4a7c3f;
+    --gold: #c9a84c;
+    --gold2: #f0d080;
+    --amber: #d4870a;
+    --white: #ffffff;
+    --light: #f4f8f0;
+    --accent: #2d5c2d;
+    --text: #1a2e1a;
+    --muted: #6b7280;
+    --green: #10b981;
+    --brown: #7c4a1e;
+    --cream: #faf6ee;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: #e8ede8;
+    color: var(--text);
+  }
+
+  .slide {
+    width: 1200px;
+    min-height: 675px;
+    margin: 20px auto;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  }
+
+  /* ══ COVER ══ */
+  .slide-cover {
+    background: linear-gradient(135deg, #0d1a0d 0%, #1a2e1a 40%, #2d5c2d 80%, #1a2e1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 675px;
+    text-align: center;
+    padding: 60px;
+    position: relative;
+  }
+
+  .slide-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(74,124,63,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .slide-cover .badge {
+    background: rgba(201,168,76,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .slide-cover h1 {
+    color: white;
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .slide-cover h1 span { color: var(--gold); }
+
+  .slide-cover .brand-name {
+    color: rgba(255,255,255,0.85);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  .slide-cover .subtitle {
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    margin-bottom: 44px;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 44px;
+    margin-top: 16px;
+    position: relative;
+  }
+
+  .cover-stat { text-align: center; }
+  .cover-stat .num { color: var(--gold); font-size: 34px; font-weight: 800; display: block; }
+  .cover-stat .lbl { color: rgba(255,255,255,0.5); font-size: 11px; letter-spacing: 1px; }
+  .cover-divider { width: 1px; background: rgba(255,255,255,0.15); height: 56px; align-self: center; }
+
+  .cover-footer {
+    position: absolute;
+    bottom: 28px; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+    color: rgba(255,255,255,0.25);
+    font-size: 11px;
+  }
+
+  .gold-line { width: 60px; height: 3px; background: var(--gold); margin: 20px auto; border-radius: 2px; }
+
+  /* ══ HEADER ══ */
+  .slide-header {
+    background: linear-gradient(90deg, var(--forest) 0%, var(--accent) 100%);
+    padding: 26px 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .slide-header .tag {
+    background: var(--gold);
+    color: var(--forest);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .slide-header h2 { color: white; font-size: 24px; font-weight: 700; }
+  .slide-header .sub { color: rgba(255,255,255,0.45); font-size: 12px; margin-left: auto; white-space: nowrap; }
+
+  .slide-body { padding: 32px 48px; }
+
+  /* ══ SECTION TITLE ══ */
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+
+  /* ══ INFO BLOCKS ══ */
+  .info-block {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid var(--gold);
+  }
+  .info-block h3 { color: var(--forest); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 700; }
+  .info-row { display: flex; gap: 8px; margin-bottom: 7px; align-items: flex-start; }
+  .info-row .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .info-row p { font-size: 13px; color: #374151; line-height: 1.5; }
+
+  .cost-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .cost-table tr { border-bottom: 1px solid #e5e7eb; }
+  .cost-table tr:last-child { border-bottom: none; }
+  .cost-table td { padding: 7px 4px; font-size: 12.5px; color: #374151; }
+  .cost-table td:last-child { text-align: right; font-weight: 600; color: var(--forest); }
+  .cost-table .total-row td { font-weight: 700; color: var(--forest); font-size: 14px; border-top: 2px solid var(--gold); padding-top: 10px; }
+
+  /* ══ OVERVIEW GRID ══ */
+  .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 4px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  /* ══ PERSONA ══ */
+  .persona-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 8px; }
+  .persona-card { border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
+  .persona-head { padding: 16px; text-align: center; color: white; }
+  .persona-head .emoji { font-size: 30px; display: block; margin-bottom: 6px; }
+  .persona-head .name { font-size: 15px; font-weight: 700; }
+  .persona-head .age { font-size: 11px; opacity: 0.8; margin-top: 2px; }
+  .persona-pa { background: linear-gradient(135deg,#1a2e1a,#2d5c2d); }
+  .persona-pb { background: linear-gradient(135deg,#7c3aed,#a855f7); }
+  .persona-pc { background: linear-gradient(135deg,#7c4a1e,#b87333); }
+  .persona-body { padding: 14px 16px; }
+  .p-row { margin-bottom: 9px; }
+  .p-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 3px; }
+  .p-val { font-size: 12.5px; color: var(--text); font-weight: 500; line-height: 1.4; }
+
+  .tag-pill {
+    display: inline-block;
+    background: rgba(74,124,63,0.12);
+    border: 1px solid var(--tea);
+    color: var(--tea);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 3px 3px;
+  }
+
+  /* ══ ROADMAP ══ */
+  .roadmap-phases { display: flex; gap: 10px; margin-top: 8px; align-items: stretch; }
+  .phase { flex: 1; border-radius: 12px; overflow: hidden; background: var(--light); display: flex; flex-direction: column; }
+  .phase-header { padding: 12px 14px; text-align: center; }
+  .phase-header .days { font-size: 10px; font-weight: 700; letter-spacing: 1px; opacity: 0.85; display: block; margin-bottom: 3px; color: white; }
+  .phase-header .title { font-size: 12px; font-weight: 800; color: white; line-height: 1.3; display: block; }
+  .phase-body { padding: 12px 14px; flex: 1; }
+  .phase-item { font-size: 11px; color: #374151; padding: 3px 0; padding-left: 13px; position: relative; line-height: 1.4; }
+  .phase-item::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 9px; top: 4px; }
+  .phase-output { margin: 8px 14px 12px; background: rgba(0,0,0,0.05); border-radius: 8px; padding: 9px; }
+  .phase-output .out-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 3px; }
+  .phase-output .out-val { font-size: 11px; font-weight: 700; color: var(--forest); }
+  .ph1 .phase-header { background: linear-gradient(135deg,#1a2e1a,#2d5c2d); }
+  .ph2 .phase-header { background: linear-gradient(135deg,#7c3aed,#a855f7); }
+  .ph3 .phase-header { background: linear-gradient(135deg,#0891b2,#06b6d4); }
+  .ph4 .phase-header { background: linear-gradient(135deg,#d97706,#f59e0b); }
+  .ph5 .phase-header { background: linear-gradient(135deg,#059669,#10b981); }
+
+  /* ══ PATTERN GRID ══ */
+  .pattern-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 8px; }
+  .pattern-card { background: var(--light); border-radius: 10px; padding: 14px; border-top: 3px solid var(--gold); }
+  .pattern-num { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 1px; margin-bottom: 5px; }
+  .pattern-name { font-size: 13px; font-weight: 700; color: var(--forest); margin-bottom: 5px; }
+  .pattern-ex { font-size: 11px; color: var(--muted); line-height: 1.4; font-style: italic; }
+
+  /* ══ WORKFLOW ══ */
+  .workflow { display: flex; gap: 0; margin-top: 14px; align-items: stretch; }
+  .wf-step { flex: 1; text-align: center; position: relative; }
+  .wf-step:not(:last-child)::after { content: '→'; position: absolute; right: -10px; top: 40%; font-size: 18px; color: var(--gold); font-weight: 700; z-index: 2; }
+  .wf-icon { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg,var(--forest),var(--accent)); display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 20px; }
+  .wf-name { font-size: 11px; font-weight: 700; color: var(--forest); margin-bottom: 3px; }
+  .wf-tool { font-size: 10px; color: var(--muted); background: var(--light); padding: 2px 7px; border-radius: 20px; display: inline-block; }
+
+  /* ══ MONTH GRID ══ */
+  .month-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 10px; margin-top: 8px; }
+  .month-card { border-radius: 10px; overflow: hidden; background: var(--light); }
+  .month-head { padding: 10px 8px; text-align: center; color: white; font-weight: 700; }
+  .month-head .m-num { font-size: 20px; display: block; }
+  .month-head .m-name { font-size: 10px; opacity: 0.9; }
+  .mh1 { background: linear-gradient(135deg,#0d1a0d,#1a2e1a); }
+  .mh2 { background: linear-gradient(135deg,#7c3aed,#a855f7); }
+  .mh3 { background: linear-gradient(135deg,#0891b2,#06b6d4); }
+  .mh4 { background: linear-gradient(135deg,#d97706,#f59e0b); }
+  .mh5 { background: linear-gradient(135deg,#059669,#10b981); }
+  .mh6 { background: linear-gradient(135deg,#7c4a1e,#b87333); }
+  .month-body { padding: 10px 9px; }
+  .month-focus { font-size: 11px; font-weight: 700; color: var(--forest); margin-bottom: 7px; line-height: 1.3; }
+  .month-item { font-size: 10px; color: #4b5563; padding: 2px 0; padding-left: 11px; position: relative; line-height: 1.35; }
+  .month-item::before { content: '·'; position: absolute; left: 1px; color: var(--gold); font-weight: 900; font-size: 14px; line-height: 1; }
+  .month-kpi { margin-top: 8px; padding-top: 8px; border-top: 1px solid #e5e7eb; font-size: 10px; color: var(--forest); font-weight: 700; }
+
+  /* ══ BUDGET ══ */
+  .budget-wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; margin-top: 8px; }
+  .budget-table { width: 100%; border-collapse: collapse; }
+  .budget-table th { background: var(--forest); color: white; padding: 9px 11px; font-size: 11px; text-align: left; font-weight: 600; }
+  .budget-table td { padding: 8px 11px; font-size: 12px; border-bottom: 1px solid #f0f0f0; }
+  .budget-table tr:nth-child(even) td { background: var(--light); }
+  .budget-table tr:last-child td { background: #fef9e7; font-weight: 700; color: var(--forest); font-size: 13px; border-top: 2px solid var(--gold); }
+
+  .budget-chart { display: flex; flex-direction: column; gap: 11px; }
+  .bar-label { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 11px; font-weight: 600; color: var(--forest); }
+  .bar-track { height: 9px; background: #e5e7eb; border-radius: 5px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 5px; background: linear-gradient(90deg,var(--forest),var(--gold)); }
+
+  .budget-total-box { background: linear-gradient(135deg,var(--forest),var(--accent)); border-radius: 12px; padding: 18px; text-align: center; margin-top: 14px; }
+  .budget-total-box .btl { color: rgba(255,255,255,0.6); font-size: 11px; margin-bottom: 5px; }
+  .budget-total-box .btv { color: var(--gold); font-size: 26px; font-weight: 800; }
+  .budget-total-box .bts { color: rgba(255,255,255,0.45); font-size: 11px; margin-top: 4px; }
+
+  /* ══ KPI TABLE ══ */
+  .kpi-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .kpi-table th { background: var(--forest); color: white; padding: 10px 14px; font-size: 11px; text-align: left; font-weight: 600; }
+  .kpi-table td { padding: 9px 14px; font-size: 12px; border-bottom: 1px solid #f0f0f0; color: #374151; }
+  .kpi-table tr:nth-child(even) td { background: var(--light); }
+  .kpi-tag { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: 600; }
+  .tag-view { background: #dbeafe; color: #1d4ed8; }
+  .tag-engage { background: #fce7f3; color: #be185d; }
+  .tag-convert { background: #d1fae5; color: #065f46; }
+
+  /* ══ HIGHLIGHT BOX ══ */
+  .highlight-box { background: linear-gradient(135deg,var(--forest),var(--accent)); border-radius: 12px; padding: 18px 22px; color: white; }
+  .highlight-box h4 { color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .highlight-box li { font-size: 12px; color: rgba(255,255,255,0.85); margin-bottom: 6px; padding-left: 15px; position: relative; line-height: 1.5; list-style: none; }
+  .highlight-box li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 10px; }
+
+  /* ══ SCHED TABLE ══ */
+  table.sched { width: 100%; border-collapse: collapse; font-size: 12px; }
+  table.sched th { background: var(--forest); color: white; padding: 8px 12px; text-align: left; font-weight: 600; font-size: 11px; }
+  table.sched td { padding: 8px 12px; border-bottom: 1px solid #f0f0f0; color: #374151; vertical-align: top; line-height: 1.5; }
+  table.sched tr:nth-child(even) td { background: #fafafa; }
+
+  /* ══ PAGE NUMBERS ══ */
+  .page-num { position: absolute; bottom: 16px; right: 26px; font-size: 11px; color: rgba(255,255,255,0.3); }
+  .page-num-dark { position: absolute; bottom: 16px; right: 26px; font-size: 11px; color: #d1d5db; }
+  .logo-mark { position: absolute; bottom: 16px; left: 26px; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 2px; }
+  .logo-mark-dark { position: absolute; bottom: 16px; left: 26px; font-size: 10px; color: #d1d5db; letter-spacing: 2px; }
+
+  /* ══ BACK COVER ══ */
+  .slide-back {
+    background: linear-gradient(135deg,#0d1a0d 0%, #1a2e1a 50%, #2d5c2d 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 675px; text-align: center; padding: 60px;
+  }
+  .slide-back .big-quote { font-size: 26px; font-weight: 700; color: white; line-height: 1.6; max-width: 720px; margin-bottom: 12px; }
+  .slide-back .big-quote span { color: var(--gold); }
+  .slide-back .small-note { color: rgba(255,255,255,0.4); font-size: 14px; max-width: 500px; line-height: 1.7; margin-top: 14px; }
+  .contact-row { display: flex; gap: 30px; margin-top: 44px; }
+  .contact-item { text-align: center; }
+  .contact-item .c-label { font-size: 10px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+  .contact-item .c-val { font-size: 14px; color: var(--gold); font-weight: 600; }
+
+  @media print {
+    body { background: white; }
+    .slide { margin: 0; box-shadow: none; page-break-after: always; break-after: page; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 1: COVER
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-cover">
+    <div class="badge">Tài Liệu Nội Bộ · Chiến Lược AI Marketing</div>
+    <h1>Kế Hoạch <span>AI Marketing</span><br>6 Tháng</h1>
+    <div class="brand-name">SUỐI GIÀNG DRAGON LEGEND TEA RESORT</div>
+    <div class="subtitle">Hệ Thống Nội Dung AI Tự Động · Yên Bái · Trà Shan Tuyết Cổ Thụ</div>
+    <div class="gold-line"></div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="num">21</span>
+        <span class="lbl">Ngày Ra Booking Đầu</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-stat">
+        <span class="num">6</span>
+        <span class="lbl">Tháng Triển Khai</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-stat">
+        <span class="num">4</span>
+        <span class="lbl">Kênh Truyền Thông</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-stat">
+        <span class="num">300+</span>
+        <span class="lbl">Năm Tuổi Cây Trà</span>
+      </div>
+    </div>
+    <div class="cover-footer">
+      <span>Người Đề Xuất: Lê Tiến Đạt — AI Marketing Consultant</span>
+      <span>Tháng 7 · 2026</span>
+    </div>
+  </div>
+  <span class="page-num">01</span>
+  <span class="logo-mark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 2: TỔNG QUAN DỰ ÁN
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 02</div>
+    <h2>Tổng Quan Dự Án & Giá Trị Thương Hiệu</h2>
+    <span class="sub">Suối Giàng · Văn Chấn · Yên Bái</span>
+  </div>
+  <div class="slide-body">
+    <div class="overview-grid">
+      <div>
+        <div class="section-title">Điểm Độc Đáo Cần Khai Thác</div>
+        <div class="info-block">
+          <h3>USP — Lợi Thế Cạnh Tranh</h3>
+          <div class="info-row"><div class="dot"></div><p>Cây trà Shan Tuyết cổ thụ 300–800 năm tuổi — độc nhất Việt Nam</p></div>
+          <div class="info-row"><div class="dot"></div><p>Độ cao 1.400m — khí hậu trong lành, sương mù huyền ảo quanh năm</p></div>
+          <div class="info-row"><div class="dot"></div><p>Trải nghiệm hái trà thủ công với người H'Mông bản địa</p></div>
+          <div class="info-row"><div class="dot"></div><p>Resort sinh thái tích hợp — lưu trú, trà đạo, trekking rừng nguyên sinh</div>
+          <div class="info-row"><div class="dot"></div><p>Sản phẩm trà xuất khẩu cao cấp — Dragon Legend tea gắn liền địa danh</p></div>
+        </div>
+        <br>
+        <div class="info-block">
+          <h3>AI sẽ thực hiện</h3>
+          <div class="info-row"><div class="dot"></div><p>Sản xuất video AI: cảnh rừng trà sương mù, hái trà bình minh, trà đạo thiền</p></div>
+          <div class="info-row"><div class="dot"></div><p>AI KOL "Thiên" — hướng dẫn viên ảo dẫn tour vườn trà cổ thụ</p></div>
+          <div class="info-row"><div class="dot"></div><p>Xây TikTok, YouTube, Instagram, Facebook tự động đa kênh</p></div>
+          <div class="info-row"><div class="dot"></div><p>Hệ thống affiliate với các travel blogger, KOL lifestyle</p></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Chi Phí Hàng Tháng</div>
+        <div class="info-block">
+          <h3>Bảng chi phí vận hành</h3>
+          <table class="cost-table">
+            <tr><td>Lương Mr. Đạt (bán thời gian)</td><td>10.000.000đ</td></tr>
+            <tr><td>Lương nhân sự Full-time</td><td>10.000.000đ</td></tr>
+            <tr><td>Claude AI ($22/tháng)</td><td>~550.000đ</td></tr>
+            <tr><td>Gemini Pro (1.200.000đ/18 tháng)</td><td>~67.000đ</td></tr>
+            <tr><td>Tools kết nối (mua 1 lần)</td><td>2.500.000đ</td></tr>
+            <tr><td>Capcut Pro (mua 1 lần)</td><td>1.700.000đ</td></tr>
+            <tr><td>Chạy Ads (T1: 5tr · T2: 10tr)</td><td>5–10.000.000đ</td></tr>
+            <tr class="total-row"><td>TỔNG THÁNG ĐẦU</td><td>~29.800.000đ</td></tr>
+          </table>
+        </div>
+        <br>
+        <div style="background:#f0fdf4;border-radius:10px;padding:14px;border-left:4px solid var(--tea);">
+          <div style="font-size:12px;font-weight:700;color:var(--forest);margin-bottom:8px;">🍃 Sản Phẩm Chủ Lực Cần Quảng Bá</div>
+          <div class="info-row"><div class="dot"></div><p style="font-size:12.5px;"><strong>Gói Nghỉ Dưỡng</strong> — 2N1Đ, 3N2Đ tại resort</p></div>
+          <div class="info-row"><div class="dot"></div><p style="font-size:12.5px;"><strong>Tour Trà Đạo</strong> — Hái trà + chế biến + thưởng trà thiền</p></div>
+          <div class="info-row"><div class="dot"></div><p style="font-size:12.5px;"><strong>Trà Shan Tuyết</strong> — Hộp quà cao cấp, xuất khẩu</p></div>
+          <div class="info-row"><div class="dot"></div><p style="font-size:12.5px;"><strong>Corporate Retreat</strong> — Team building thiên nhiên</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">02</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 3: CHÂN DUNG KHÁCH HÀNG
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 03</div>
+    <h2>Chân Dung Khách Hàng — Customer Persona</h2>
+    <span class="sub">Ngày 3 · Giai đoạn nền móng</span>
+  </div>
+  <div class="slide-body">
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-head persona-pa">
+          <span class="emoji">🧘</span>
+          <div class="name">Nhóm A — Wellness Seeker</div>
+          <div class="age">28–45 tuổi · Thu nhập 20–80tr/tháng</div>
+        </div>
+        <div class="persona-body">
+          <div class="p-row">
+            <div class="p-label">Nghề nghiệp</div>
+            <div class="p-val">Chuyên gia, Freelancer, Content Creator, Doanh nhân</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Vấn đề chính</div>
+            <div class="p-val">Burnout đô thị, cần detox thiên nhiên, tìm trải nghiệm có chiều sâu — không chỉ "check-in"</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Insight</div>
+            <div class="p-val" style="color:#1a2e1a;font-style:italic;">"Tôi muốn tắt điện thoại, uống trà, ngắm mây — một mình với thiên nhiên"</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Từ khóa content</div>
+            <div class="p-val">
+              <span class="tag-pill">detox thiên nhiên</span>
+              <span class="tag-pill">resort núi yên tĩnh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-head persona-pb">
+          <span class="emoji">📸</span>
+          <div class="name">Nhóm B — Travel & Content Creator</div>
+          <div class="age">22–38 tuổi · Thu nhập 10–40tr/tháng</div>
+        </div>
+        <div class="persona-body">
+          <div class="p-row">
+            <div class="p-label">Nghề nghiệp</div>
+            <div class="p-val">Blogger, YouTuber, Nhiếp ảnh gia, Travel influencer</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Vấn đề chính</div>
+            <div class="p-val">Cần địa điểm đẹp, độc, chưa ai khai thác — tạo nội dung viral về văn hóa bản địa</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Insight</div>
+            <div class="p-val" style="color:#7c3aed;font-style:italic;">"Cây trà 800 tuổi mà chụp được ảnh đẹp — triệu view là chắc"</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Từ khóa content</div>
+            <div class="p-val">
+              <span class="tag-pill">cây trà cổ thụ</span>
+              <span class="tag-pill">suối giàng yên bái</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-head persona-pc">
+          <span class="emoji">🎋</span>
+          <div class="name">Nhóm C — Trà Đạo & Premium Gift</div>
+          <div class="age">35–60 tuổi · Thu nhập 30–200tr/tháng</div>
+        </div>
+        <div class="persona-body">
+          <div class="p-row">
+            <div class="p-label">Đặc điểm</div>
+            <div class="p-val">Connoisseur trà, Doanh nhân, Người tặng quà cao cấp</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Vấn đề chính</div>
+            <div class="p-val">Tìm trà Shan Tuyết chính gốc, quà biếu đẳng cấp, muốn trực tiếp trải nghiệm tại nguồn</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Insight</div>
+            <div class="p-val" style="color:#7c4a1e;font-style:italic;">"Trà này tặng đối tác nước ngoài — phải có câu chuyện, có xuất xứ rõ ràng"</div>
+          </div>
+          <div class="p-row">
+            <div class="p-label">Từ khóa content</div>
+            <div class="p-val">
+              <span class="tag-pill">trà shan tuyết cao cấp</span>
+              <span class="tag-pill">quà tặng trà</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+      <div class="highlight-box">
+        <h4>Pain Points Cần Khai Thác</h4>
+        <ul>
+          <li>Sợ resort núi thiếu tiện nghi — muốn xem phòng thực tế</li>
+          <li>Không biết Suối Giàng ở đâu, đường đi thế nào</li>
+          <li>Lo thời tiết xấu, sương mù không ngắm được gì</li>
+          <li>Phân vân trà thật vs. trà giả — cần chứng minh nguồn gốc</li>
+          <li>Chưa biết trải nghiệm gì ngoài uống trà và ngủ</li>
+        </ul>
+      </div>
+      <div style="background:var(--light);border-radius:12px;padding:18px;">
+        <div class="section-title" style="margin-bottom:12px;">Từ Khóa Content Ưu Tiên</div>
+        <span class="tag-pill">suối giàng</span>
+        <span class="tag-pill">resort yên bái</span>
+        <span class="tag-pill">cây trà cổ thụ</span>
+        <span class="tag-pill">trà shan tuyết</span>
+        <span class="tag-pill">du lịch yên bái</span>
+        <span class="tag-pill">dragon legend tea</span>
+        <span class="tag-pill">resort núi sương mù</span>
+        <span class="tag-pill">hái trà bình minh</span>
+        <span class="tag-pill">detox thiên nhiên</span>
+        <span class="tag-pill">trà đạo việt nam</span>
+        <span class="tag-pill">team building resort</span>
+        <span class="tag-pill">quà tặng trà cao cấp</span>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">03</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 4: LỘ TRÌNH 21 NGÀY
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 04</div>
+    <h2>Lộ Trình 21 Ngày Đầu Tiên</h2>
+    <span class="sub">Ra Booking & Đơn Trà Đầu Tiên Từ AI Channel</span>
+  </div>
+  <div class="slide-body">
+    <div class="roadmap-phases">
+      <div class="phase ph1">
+        <div class="phase-header">
+          <span class="days">NGÀY 1–3</span>
+          <span class="title">XÂY NỀN MÓNG</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item">Setup kênh TikTok, Instagram chính thức</div>
+          <div class="phase-item">Chọn sản phẩm WIN: Gói 2N1Đ + Tour trà đạo</div>
+          <div class="phase-item">Phân tích 3 nhóm khách hàng mục tiêu</div>
+          <div class="phase-item">Xây Insight Map 15+ pain points</div>
+          <div class="phase-item">30 từ khóa content ưu tiên</div>
+        </div>
+        <div class="phase-output">
+          <div class="out-label">Output</div>
+          <div class="out-val">Kênh live · Product Map · Persona</div>
+        </div>
+      </div>
+
+      <div class="phase ph2">
+        <div class="phase-header">
+          <span class="days">NGÀY 4–7</span>
+          <span class="title">KHO CONTENT WIN</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item">Research 50+ video viral về du lịch núi</div>
+          <div class="phase-item">Lọc 20 video ra booking thực tế</div>
+          <div class="phase-item">Bóc tách cấu trúc Hook-Pain-CTA</div>
+          <div class="phase-item">Tạo 12 Pattern WIN cho resort trà</div>
+          <div class="phase-item">Thư viện 100+ ý tưởng content</div>
+        </div>
+        <div class="phase-output">
+          <div class="out-label">Output</div>
+          <div class="out-val">12 Pattern WIN · 100+ Ý tưởng</div>
+        </div>
+      </div>
+
+      <div class="phase ph3">
+        <div class="phase-header">
+          <span class="days">NGÀY 8–11</span>
+          <span class="title">DÂY CHUYỀN AI</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item">Generate ý tưởng bằng Claude AI</div>
+          <div class="phase-item">Tạo ảnh cảnh rừng trà sương mù (Gemini)</div>
+          <div class="phase-item">Tạo video AI cây trà cổ, bình minh (Kling)</div>
+          <div class="phase-item">Dựng storyboard từng video ngắn</div>
+          <div class="phase-item">Edit + caption tiếng Việt & Anh</div>
+        </div>
+        <div class="phase-output">
+          <div class="out-label">Output</div>
+          <div class="out-val">50–100 video AI sẵn sàng đăng</div>
+        </div>
+      </div>
+
+      <div class="phase ph4">
+        <div class="phase-header">
+          <span class="days">NGÀY 12–16</span>
+          <span class="title">TĂNG TỐC & TEST</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item">Clone top 5 video win · 10 biến thể</div>
+          <div class="phase-item">Test hook: cảnh sương mù vs. cây cổ thụ</div>
+          <div class="phase-item">Đăng 3–5 video/ngày đa kênh</div>
+          <div class="phase-item">Thu thập dữ liệu comment/DM thực tế</div>
+          <div class="phase-item">Tối ưu thumbnail & caption</div>
+        </div>
+        <div class="phase-output">
+          <div class="out-label">Output</div>
+          <div class="out-val">100–200 video · Dữ liệu thị trường</div>
+        </div>
+      </div>
+
+      <div class="phase ph5">
+        <div class="phase-header">
+          <span class="days">NGÀY 17–21</span>
+          <span class="title">TỐI ƯU & BOOKING</span>
+        </div>
+        <div class="phase-body">
+          <div class="phase-item">Phân tích video hiệu quả vs. kém</div>
+          <div class="phase-item">Tối ưu Hook → 3s đầu cảnh đẹp nhất</div>
+          <div class="phase-item">Tối ưu CTA → DM đặt tour/mua trà</div>
+          <div class="phase-item">Setup auto-reply Zalo/Messenger</div>
+          <div class="phase-item">Chốt booking đầu tiên từ kênh AI</div>
+        </div>
+        <div class="phase-output">
+          <div class="out-label">Output</div>
+          <div class="out-val">3–8 booking · Hệ thống hoàn chỉnh</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px;">
+        <div style="font-size:12px;font-weight:700;color:#065f46;margin-bottom:7px;">🔁 Quy Trình Mỗi Ngày</div>
+        <div style="font-size:11.5px;color:#374151;line-height:1.8;">
+          7h — Phân tích dữ liệu hôm qua<br>
+          8h30 — Lên ý tưởng & tối ưu<br>
+          10h — Sản xuất 5–8 video AI<br>
+          16h — Đăng + theo dõi 2h đầu<br>
+          19h — Đăng khung giờ vàng<br>
+          20h — Reply DM, inbox khách
+        </div>
+      </div>
+      <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px;">
+        <div style="font-size:12px;font-weight:700;color:#1e40af;margin-bottom:7px;">📊 KPI Sau 21 Ngày</div>
+        <div style="font-size:11.5px;color:#374151;line-height:1.8;">
+          View/Video: ≥ 1.000<br>
+          Watch Time: ≥ 15 giây<br>
+          Follow Rate: ≥ 0,5%<br>
+          DM/Inbox: ≥ 5/video tốt<br>
+          Booking resort: 3–8 đơn<br>
+          Đơn trà online: 5–15 đơn
+        </div>
+      </div>
+      <div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;padding:14px;">
+        <div style="font-size:12px;font-weight:700;color:#92400e;margin-bottom:7px;">🍃 Thế Mạnh Cần Nhấn</div>
+        <div style="font-size:11.5px;color:#374151;line-height:1.8;">
+          Cây trà 300–800 năm tuổi<br>
+          Độ cao 1.400m · Sương mù<br>
+          Văn hóa H'Mông bản địa<br>
+          Trà hữu cơ chưa qua chế biến<br>
+          Trải nghiệm "chạm tay vào lịch sử"<br>
+          Không khí trong lành tuyệt đối
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">04</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 5: 12 PATTERN WIN
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 05</div>
+    <h2>12 Pattern WIN — Công Thức Content Dragon Legend</h2>
+    <span class="sub">Áp dụng từ Ngày 4–7</span>
+  </div>
+  <div class="slide-body">
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 01</div>
+        <div class="pattern-name">Cảnh Đẹp Bình Minh</div>
+        <div class="pattern-ex">"4h sáng leo lên đỉnh Suối Giàng — cảnh này không có ở đâu tại Việt Nam"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 02</div>
+        <div class="pattern-name">Câu Chuyện Cây Trà</div>
+        <div class="pattern-ex">"Cây trà này 600 tuổi — trồng từ thời nhà Lê, uống một chén là chạm vào lịch sử"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 03</div>
+        <div class="pattern-name">Before – After Detox</div>
+        <div class="pattern-ex">"Trước khi đến: burnout, stress. Sau 2 ngày Suối Giàng: như được reset toàn bộ"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 04</div>
+        <div class="pattern-name">Bí Quyết Chọn Trà</div>
+        <div class="pattern-ex">"Trà Shan Tuyết thật vs. giả — 5 dấu hiệu nhận biết mà ít người biết"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 05</div>
+        <div class="pattern-name">Review Trải Nghiệm</div>
+        <div class="pattern-ex">Unboxing phòng bungalow, hái trà sương mù, nghi lễ trà đạo, trekking rừng nguyên sinh</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 06</div>
+        <div class="pattern-name">Văn Hóa Bản Địa</div>
+        <div class="pattern-ex">"Người H'Mông ở đây uống trà từ khi mặt trời chưa mọc — tôi đã được ngồi cùng họ"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 07</div>
+        <div class="pattern-name">Top List Trải Nghiệm</div>
+        <div class="pattern-ex">"7 điều chỉ có ở Dragon Legend Tea Resort — không resort núi nào ở Việt Nam có đủ"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 08</div>
+        <div class="pattern-name">AI KOL Dẫn Tour</div>
+        <div class="pattern-ex">Avatar AI "Thiên" dẫn tour ảo vườn trà cổ thụ — cabin nhà sàn, đồi sương mù, pha trà</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 09</div>
+        <div class="pattern-name">Hỏi – Đáp Thực Tế</div>
+        <div class="pattern-ex">"Lên Suối Giàng mặc gì? Đi mùa nào đẹp nhất? Đường lên có khó không?"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 10</div>
+        <div class="pattern-name">Quà Tặng Premium</div>
+        <div class="pattern-ex">"Hộp trà Dragon Legend — quà tặng mà sếp tôi xin thêm địa chỉ để đặt thêm"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 11</div>
+        <div class="pattern-name">So Sánh Giá Trị</div>
+        <div class="pattern-ex">"2 ngày 1 đêm ở Suối Giàng vs. Đà Lạt — cùng giá, khác hoàn toàn về chiều sâu trải nghiệm"</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-num">PATTERN 12</div>
+        <div class="pattern-name">FOMO Mùa Vụ</div>
+        <div class="pattern-ex">"Mùa hái trà tháng 3–4 chỉ có 6 tuần — phòng đã kín 80%. Còn 3 suất cuối tuần này"</div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;background:var(--forest);border-radius:12px;padding:16px 22px;">
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <div style="color:var(--gold);font-size:12px;font-weight:700;white-space:nowrap;">Cấu Trúc Mỗi Video:</div>
+        <div style="display:flex;gap:7px;flex-wrap:wrap;">
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;">🪝 HOOK (3s)</span>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px;">→</span>
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;">😣 PAIN</span>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px;">→</span>
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;">💡 SOLUTION</span>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px;">→</span>
+          <span style="background:rgba(255,255,255,0.1);color:white;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;">✅ PROOF</span>
+          <span style="color:rgba(255,255,255,0.3);font-size:16px;">→</span>
+          <span style="background:rgba(201,168,76,0.3);color:var(--gold);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;">📲 CTA</span>
+        </div>
+        <div style="margin-left:auto;color:rgba(255,255,255,0.45);font-size:11px;">Thời lượng: 30–60 giây</div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">05</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 6: HỆ THỐNG SẢN XUẤT
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 06</div>
+    <h2>Hệ Thống Sản Xuất Video AI — Dây Chuyền Tự Động</h2>
+    <span class="sub">Ngày 8–11 · AI Content Factory</span>
+  </div>
+  <div class="slide-body">
+    <div class="workflow">
+      <div class="wf-step">
+        <div class="wf-icon">💡</div>
+        <div class="wf-name">Ý Tưởng</div>
+        <div class="wf-tool">Claude AI</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">🛡</div>
+        <div class="wf-name">Duyệt Policy</div>
+        <div class="wf-tool">Claude AI</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">🎬</div>
+        <div class="wf-name">Storyboard</div>
+        <div class="wf-tool">Claude AI</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">🖼</div>
+        <div class="wf-name">Tạo Ảnh</div>
+        <div class="wf-tool">Gemini / Midjourney</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">🎥</div>
+        <div class="wf-name">Tạo Video</div>
+        <div class="wf-tool">Kling / Veo</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">✂️</div>
+        <div class="wf-name">Edit & Caption</div>
+        <div class="wf-tool">Capcut Pro</div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-icon">📱</div>
+        <div class="wf-name">Đăng & Track</div>
+        <div class="wf-tool">Buffer / Later</div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;" class="two-col">
+      <div>
+        <div class="section-title">Prompt Mẫu — Tạo Cảnh Rừng Trà AI</div>
+        <div style="background:#0d1a0d;border-radius:10px;padding:14px;font-family:monospace;font-size:11.5px;color:#a5d6a7;line-height:1.8;border-left:3px solid var(--gold);">
+          "Ancient Shan Tuyet tea trees 300 years old<br>
+          on misty mountain Suoi Giang Vietnam,<br>
+          golden sunrise through fog, H'Mong woman<br>
+          picking tea leaves, cinematic atmosphere,<br>
+          lush green terraced hills, 9:16 vertical,<br>
+          photorealistic, no text, warm morning light"
+        </div>
+        <div style="margin-top:14px;" class="section-title">Prompt Tạo Ý Tưởng — Claude AI</div>
+        <div style="background:#0d1a0d;border-radius:10px;padding:14px;font-family:monospace;font-size:11.5px;color:#90caf9;line-height:1.8;border-left:3px solid var(--gold);">
+          "Tôi làm TikTok cho Dragon Legend Tea Resort<br>
+          tại Suối Giàng — cây trà 300–800 năm tuổi.<br>
+          KH: wellness seeker, travel creator, trà đạo.<br>
+          Theo Pattern [số], tạo 10 ý tưởng:<br>
+          Hook | Pain | Solution | Proof | CTA.<br>
+          Giọng: huyền bí, gần gũi, truyền cảm hứng."
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">2 Luồng Content Song Song</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+          <div style="background:#f0fdf4;border-radius:10px;padding:14px;border-left:4px solid var(--tea);">
+            <div style="font-size:12px;font-weight:700;color:var(--forest);margin-bottom:7px;">🍃 Luồng 1: Cảnh Đẹp & Trải Nghiệm</div>
+            <div style="font-size:11.5px;color:#374151;line-height:1.7;">
+              Video ngắn 30–45s · TikTok + Reels + Shorts<br>
+              Cảnh sương mù, bình minh, hái trà<br>
+              Mục tiêu: viral, tăng follow, build awareness
+            </div>
+          </div>
+          <div style="background:#fef9e7;border-radius:10px;padding:14px;border-left:4px solid var(--gold);">
+            <div style="font-size:12px;font-weight:700;color:#92400e;margin-bottom:7px;">🎋 Luồng 2: Giáo Dục & Bán Hàng</div>
+            <div style="font-size:11.5px;color:#374151;line-height:1.7;">
+              Video dài 3–10 phút · YouTube + Facebook<br>
+              Quy trình làm trà, văn hóa H'Mông, review resort<br>
+              Mục tiêu: SEO, trust, chuyển đổi booking/mua trà
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Khung Giờ Vàng Đăng Bài</div>
+        <div style="display:flex;gap:8px;">
+          <div style="flex:1;background:linear-gradient(135deg,#1a2e1a,#2d5c2d);border-radius:10px;padding:10px;text-align:center;color:white;">
+            <div style="font-size:20px;font-weight:800;">6h30</div>
+            <div style="font-size:10px;opacity:0.7;">Sáng sớm</div>
+          </div>
+          <div style="flex:1;background:linear-gradient(135deg,#7c3aed,#a855f7);border-radius:10px;padding:10px;text-align:center;color:white;">
+            <div style="font-size:20px;font-weight:800;">12h</div>
+            <div style="font-size:10px;opacity:0.7;">Buổi trưa</div>
+          </div>
+          <div style="flex:1;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:10px;padding:10px;text-align:center;color:white;">
+            <div style="font-size:20px;font-weight:800;">19h</div>
+            <div style="font-size:10px;opacity:0.7;">Tối ★</div>
+          </div>
+          <div style="flex:1;background:linear-gradient(135deg,#059669,#10b981);border-radius:10px;padding:10px;text-align:center;color:white;">
+            <div style="font-size:20px;font-weight:800;">21h</div>
+            <div style="font-size:10px;opacity:0.7;">Tối muộn</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">06</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 7: KẾ HOẠCH 6 THÁNG
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 07</div>
+    <h2>Kế Hoạch Triển Khai 6 Tháng</h2>
+    <span class="sub">Tháng 7/2026 — Tháng 12/2026</span>
+  </div>
+  <div class="slide-body">
+    <div class="month-grid">
+      <div class="month-card">
+        <div class="month-head mh1">
+          <span class="m-num">T1</span>
+          <span class="m-name">NỀN MÓNG</span>
+        </div>
+        <div class="month-body">
+          <div class="month-focus">21 Ngày Ra Booking Đầu</div>
+          <div class="month-item">Setup TikTok · IG · YouTube · FB</div>
+          <div class="month-item">12 Pattern WIN · 100+ video AI</div>
+          <div class="month-item">Training nhân sự vận hành</div>
+          <div class="month-item">Chạy Ads test: 5.000.000đ</div>
+          <div class="month-item">Hệ thống DM tự động Zalo</div>
+          <div class="month-kpi">🎯 3–8 booking · 5–15 đơn trà</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-head mh2">
+          <span class="m-num">T2</span>
+          <span class="m-name">ĐA KÊNH</span>
+        </div>
+        <div class="month-body">
+          <div class="month-focus">Scale Multi-Platform</div>
+          <div class="month-item">Clone win video sang Reels · Shorts</div>
+          <div class="month-item">AI KOL "Thiên" đầu tiên (HeyGen)</div>
+          <div class="month-item">Video YouTube dài 5–10 phút</div>
+          <div class="month-item">Tối ưu landing page đặt phòng</div>
+          <div class="month-item">Ads mở rộng: 10.000.000đ</div>
+          <div class="month-kpi">🎯 25–40 booking/tháng</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-head mh3">
+          <span class="m-num">T3</span>
+          <span class="m-name">AFFILIATE & TEA</span>
+        </div>
+        <div class="month-body">
+          <div class="month-focus">Affiliate + Kênh Trà Online</div>
+          <div class="month-item">Affiliate 5–8%/booking resort</div>
+          <div class="month-item">Kênh bán trà online Shopee · TikTok Shop</div>
+          <div class="month-item">3–5 travel blogger review resort</div>
+          <div class="month-item">Không chạy Ads thêm</div>
+          <div class="month-kpi">🎯 50–70 booking · 50+ đơn trà</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-head mh4">
+          <span class="m-num">T4</span>
+          <span class="m-name">ORGANIC PEAK</span>
+        </div>
+        <div class="month-body">
+          <div class="month-focus">Organic Grow + SEO</div>
+          <div class="month-item">TikTok Spark Ads video organic win</div>
+          <div class="month-item">YouTube SEO: "resort Yên Bái"</div>
+          <div class="month-item">Phễu email marketing trà đạo</div>
+          <div class="month-item">Gói corporate retreat ra mắt</div>
+          <div class="month-kpi">🎯 80–100 booking/tháng</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-head mh5">
+          <span class="m-num">T5</span>
+          <span class="m-name">TỰ ĐỘNG HÓA</span>
+        </div>
+        <div class="month-body">
+          <div class="month-focus">Hệ Thống 70% Tự Động</div>
+          <div class="month-item">Auto generate ý tưởng/ngày</div>
+          <div class="month-item">Auto đăng 4 kênh theo lịch</div>
+          <div class="month-item">Chatbot Zalo/Messenger reply</div>
+          <div class="month-item">GetResponse: email nurture 7 ngày</div>
+          <div class="month-kpi">🎯 100–130 booking/tháng</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-head mh6">
+          <span class="m-num">T6</span>
+          <span class="m-name">REVIEW & MÙA TRÀ</span>
+        </div>
+        <div class="month-body">
+          <div class="month-focus">Đánh Giá + Plan Mùa Trà 2027</div>
+          <div class="month-item">Báo cáo 6 tháng toàn bộ</div>
+          <div class="month-item">Kênh ROI cao nhất · Pattern tốt nhất</div>
+          <div class="month-item">Chuẩn bị nội dung mùa hái trà T3/2027</div>
+          <div class="month-item">Kế hoạch xuất khẩu trà qua social</div>
+          <div class="month-kpi">🎯 120–150 booking/tháng</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+      <div class="highlight-box">
+        <h4>2 Dòng Doanh Thu Song Song</h4>
+        <ul>
+          <li><strong style="color:var(--gold2);">Dòng 1 — Resort Booking:</strong> Gói lưu trú 2N1Đ · Tour trà đạo · Corporate retreat · Mục tiêu 150 booking/tháng</li>
+          <li><strong style="color:var(--gold2);">Dòng 2 — Bán Trà Online:</strong> TikTok Shop · Shopee · Đặt hộp quà · Affiliate trà · Mục tiêu 200+ đơn/tháng</li>
+          <li>AI content tạo cả 2 dòng đồng thời — 1 video, 2 mục tiêu chuyển đổi</li>
+        </ul>
+      </div>
+      <div style="background:var(--light);border-radius:12px;padding:18px;">
+        <div class="section-title" style="margin-bottom:11px;">Mục Tiêu Booking Lũy Kế</div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div><div class="bar-label"><span>Tháng 1</span><span style="color:var(--gold);">~8 booking</span></div><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></div>
+          <div><div class="bar-label"><span>Tháng 2</span><span style="color:var(--gold);">~40 booking</span></div><div class="bar-track"><div class="bar-fill" style="width:27%"></div></div></div>
+          <div><div class="bar-label"><span>Tháng 3</span><span style="color:var(--gold);">~70 booking</span></div><div class="bar-track"><div class="bar-fill" style="width:47%"></div></div></div>
+          <div><div class="bar-label"><span>Tháng 4</span><span style="color:var(--gold);">~100 booking</span></div><div class="bar-track"><div class="bar-fill" style="width:67%"></div></div></div>
+          <div><div class="bar-label"><span>Tháng 5</span><span style="color:var(--gold);">~130 booking</span></div><div class="bar-track"><div class="bar-fill" style="width:87%"></div></div></div>
+          <div><div class="bar-label"><span>Tháng 6</span><span style="color:var(--gold);">~150 booking</span></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">07</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 8: NGÂN SÁCH
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 08</div>
+    <h2>Tổng Hợp Ngân Sách 6 Tháng</h2>
+    <span class="sub">Chi Phí Thực Tế — Minh Bạch</span>
+  </div>
+  <div class="slide-body">
+    <div class="budget-wrap">
+      <div>
+        <div class="section-title">Bảng Chi Phí Chi Tiết</div>
+        <table class="budget-table">
+          <thead>
+            <tr>
+              <th>Khoản Mục</th>
+              <th>Tháng 1</th>
+              <th>Tháng 2</th>
+              <th>Tháng 3–6</th>
+              <th>Tổng 6 Tháng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lương Mr. Đạt (bán thời gian)</td>
+              <td>10.000.000đ</td>
+              <td>10.000.000đ</td>
+              <td>10.000.000đ</td>
+              <td>60.000.000đ</td>
+            </tr>
+            <tr>
+              <td>Lương nhân sự Full-time</td>
+              <td>10.000.000đ</td>
+              <td>10.000.000đ</td>
+              <td>10.000.000đ</td>
+              <td>60.000.000đ</td>
+            </tr>
+            <tr>
+              <td>Claude AI (~$22/tháng)</td>
+              <td>550.000đ</td>
+              <td>550.000đ</td>
+              <td>550.000đ</td>
+              <td>3.300.000đ</td>
+            </tr>
+            <tr>
+              <td>Gemini Pro (1.200.000đ/18 tháng)</td>
+              <td>67.000đ</td>
+              <td>67.000đ</td>
+              <td>67.000đ</td>
+              <td>402.000đ</td>
+            </tr>
+            <tr>
+              <td>Tools kết nối (mua 1 lần)</td>
+              <td>2.500.000đ</td>
+              <td>—</td>
+              <td>—</td>
+              <td>2.500.000đ</td>
+            </tr>
+            <tr>
+              <td>Capcut Pro (mua 1 lần)</td>
+              <td>1.700.000đ</td>
+              <td>—</td>
+              <td>—</td>
+              <td>1.700.000đ</td>
+            </tr>
+            <tr>
+              <td>Chạy Ads</td>
+              <td style="color:#d97706;font-weight:700;">5.000.000đ</td>
+              <td style="color:#d97706;font-weight:700;">10.000.000đ</td>
+              <td style="color:var(--muted);">Không áp dụng</td>
+              <td style="color:#d97706;font-weight:700;">15.000.000đ</td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:var(--forest);">TỔNG TỪNG THÁNG</td>
+              <td style="font-weight:700;color:var(--forest);">~29.817.000đ</td>
+              <td style="font-weight:700;color:var(--forest);">~30.617.000đ</td>
+              <td style="font-weight:700;color:var(--forest);">~20.617.000đ</td>
+              <td style="font-weight:700;color:var(--forest);font-size:13px;">~143.000.000đ</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:14px;background:#fef9e7;border:1px solid #fde68a;border-radius:10px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:#92400e;margin-bottom:5px;">📌 Ghi Chú Quan Trọng</div>
+          <div style="font-size:11.5px;color:#374151;line-height:1.7;">
+            • Chạy Ads chỉ Tháng 1 (5tr) và Tháng 2 (10tr) — test và validate kênh<br>
+            • Từ Tháng 3: dừng Ads, organic + affiliate + TikTok Shop trà<br>
+            • Tổng Ads 6 tháng: <strong>15.000.000đ</strong> — không phát sinh thêm
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Phân Bổ Ngân Sách</div>
+        <div class="budget-chart">
+          <div><div class="bar-label"><span>👤 Nhân Sự (2 người)</span><span>120.000.000đ</span></div><div class="bar-track"><div class="bar-fill" style="width:84%"></div></div></div>
+          <div><div class="bar-label"><span>📱 Chạy Ads (T1+T2)</span><span>15.000.000đ</span></div><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div></div>
+          <div><div class="bar-label"><span>🤖 AI Tools (6 tháng)</span><span>3.702.000đ</span></div><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></div>
+          <div><div class="bar-label"><span>🔧 Setup Tools (1 lần)</span><span>4.200.000đ</span></div><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></div>
+        </div>
+
+        <div class="budget-total-box">
+          <div class="btl">TỔNG CHI PHÍ 6 THÁNG</div>
+          <div class="btv">~143.000.000đ</div>
+          <div class="bts">≈ ~23,8 triệu / tháng bình quân</div>
+        </div>
+
+        <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="background:var(--light);border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:3px;">Chi phí/tháng sau T2</div>
+            <div style="font-size:19px;font-weight:800;color:var(--forest);">~20,6tr</div>
+          </div>
+          <div style="background:var(--light);border-radius:10px;padding:12px;text-align:center;">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:3px;">Chi phí AI tools/ngày</div>
+            <div style="font-size:19px;font-weight:800;color:var(--forest);">~20.000đ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">08</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 9: KPI & ĐO LƯỜNG
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 09</div>
+    <h2>Bộ KPI Đo Lường Theo Từng Giai Đoạn</h2>
+    <span class="sub">Dữ Liệu Thật — Quyết Định Đúng</span>
+  </div>
+  <div class="slide-body">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Nhóm KPI</th>
+          <th>Chỉ Số</th>
+          <th>Sau 21 Ngày</th>
+          <th>Tháng 2</th>
+          <th>Tháng 3</th>
+          <th>Tháng 4–6</th>
+          <th>Loại</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3" style="font-weight:700;color:var(--forest);">Hiển Thị</td>
+          <td>View / Video</td>
+          <td>≥ 1.000</td>
+          <td>≥ 3.000</td>
+          <td>≥ 5.000</td>
+          <td>≥ 10.000</td>
+          <td><span class="kpi-tag tag-view">View</span></td>
+        </tr>
+        <tr>
+          <td>Watch Time</td>
+          <td>≥ 15s</td>
+          <td>≥ 20s</td>
+          <td>≥ 25s</td>
+          <td>≥ 35s</td>
+          <td><span class="kpi-tag tag-view">View</span></td>
+        </tr>
+        <tr>
+          <td>Follower TikTok</td>
+          <td>≥ 1.000</td>
+          <td>≥ 5.000</td>
+          <td>≥ 15.000</td>
+          <td>≥ 35.000</td>
+          <td><span class="kpi-tag tag-view">View</span></td>
+        </tr>
+        <tr>
+          <td rowspan="3" style="font-weight:700;color:var(--forest);">Tương Tác</td>
+          <td>CTR Profile</td>
+          <td>≥ 1%</td>
+          <td>≥ 1,5%</td>
+          <td>≥ 2%</td>
+          <td>≥ 2,5%</td>
+          <td><span class="kpi-tag tag-engage">Engage</span></td>
+        </tr>
+        <tr>
+          <td>Follow Rate</td>
+          <td>≥ 0,5%</td>
+          <td>≥ 0,8%</td>
+          <td>≥ 1%</td>
+          <td>≥ 1,2%</td>
+          <td><span class="kpi-tag tag-engage">Engage</span></td>
+        </tr>
+        <tr>
+          <td>DM / Inbox từ video</td>
+          <td>≥ 5/video tốt</td>
+          <td>≥ 10</td>
+          <td>≥ 15</td>
+          <td>≥ 20</td>
+          <td><span class="kpi-tag tag-engage">Engage</span></td>
+        </tr>
+        <tr>
+          <td rowspan="4" style="font-weight:700;color:var(--forest);">Chuyển Đổi</td>
+          <td>Booking resort / Tháng</td>
+          <td>3–8</td>
+          <td>25–40</td>
+          <td>50–70</td>
+          <td>100–150</td>
+          <td><span class="kpi-tag tag-convert">Convert</span></td>
+        </tr>
+        <tr>
+          <td>Đơn trà online / Tháng</td>
+          <td>5–15</td>
+          <td>20–40</td>
+          <td>50–80</td>
+          <td>100–200</td>
+          <td><span class="kpi-tag tag-convert">Convert</span></td>
+        </tr>
+        <tr>
+          <td>Tỷ lệ chốt từ DM</td>
+          <td>≥ 10%</td>
+          <td>≥ 15%</td>
+          <td>≥ 20%</td>
+          <td>≥ 25%</td>
+          <td><span class="kpi-tag tag-convert">Convert</span></td>
+        </tr>
+        <tr>
+          <td>Video ra đơn / Tổng video</td>
+          <td>≥ 10%</td>
+          <td>≥ 15%</td>
+          <td>≥ 20%</td>
+          <td>≥ 25%</td>
+          <td><span class="kpi-tag tag-convert">Convert</span></td>
+        </tr>
+        <tr>
+          <td rowspan="2" style="font-weight:700;color:var(--forest);">Sản Xuất</td>
+          <td>Video đăng / Tuần</td>
+          <td>15–20</td>
+          <td>25–35</td>
+          <td>30–45</td>
+          <td>40–60</td>
+          <td><span class="kpi-tag tag-view">Output</span></td>
+        </tr>
+        <tr>
+          <td>Thời gian tạo 1 video</td>
+          <td>< 60 phút</td>
+          <td>< 45 phút</td>
+          <td>< 30 phút</td>
+          <td>< 20 phút</td>
+          <td><span class="kpi-tag tag-view">Output</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="background:#dbeafe;border-radius:10px;padding:13px;border-left:4px solid #1d4ed8;">
+        <div style="font-size:11px;font-weight:700;color:#1d4ed8;margin-bottom:5px;">📈 Đánh Giá Hàng Tuần</div>
+        <div style="font-size:11px;color:#374151;line-height:1.7;">Video view > 5K → nhân bản<br>Video view < 500/24h → pause<br>Phân tích → điều chỉnh ngay</div>
+      </div>
+      <div style="background:#d1fae5;border-radius:10px;padding:13px;border-left:4px solid #059669;">
+        <div style="font-size:11px;font-weight:700;color:#059669;margin-bottom:5px;">📊 Báo Cáo Hàng Tháng</div>
+        <div style="font-size:11px;color:#374151;line-height:1.7;">Booking từng kênh<br>Đơn trà online · Chi phí/booking<br>Top 5 video · Đề xuất T tiếp</div>
+      </div>
+      <div style="background:#fce7f3;border-radius:10px;padding:13px;border-left:4px solid #be185d;">
+        <div style="font-size:11px;font-weight:700;color:#be185d;margin-bottom:5px;">🔄 Vòng Lặp Tối Ưu</div>
+        <div style="font-size:11px;color:#374151;line-height:1.7;">Thu dữ liệu → Phân tích<br>→ Cải thiện → Test lại<br>Nhân bản win · Lặp lại mỗi tuần</div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">09</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 10: ACTION PLAN
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="tag">Slide 10</div>
+    <h2>Các Bước Triển Khai Ngay Trong Tuần Đầu</h2>
+    <span class="sub">Action Plan — Bắt Đầu Ngay</span>
+  </div>
+  <div class="slide-body">
+    <div class="two-col">
+      <div>
+        <div class="section-title">Checklist Setup Trước Ngày 1</div>
+        <table class="sched">
+          <thead>
+            <tr>
+              <th style="width:36px;">#</th>
+              <th>Việc Cần Làm</th>
+              <th>Người Thực Hiện</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Phê duyệt ngân sách Tháng 1 (~30tr)</td><td>BGĐ</td><td>Ngay hôm nay</td></tr>
+            <tr><td>2</td><td>Ký hợp đồng bán thời gian với Mr. Đạt</td><td>BGĐ</td><td>Trong tuần</td></tr>
+            <tr><td>3</td><td>Tuyển / chỉ định 01 nhân sự full-time</td><td>BGĐ / HR</td><td>Trong tuần</td></tr>
+            <tr><td>4</td><td>Mua tài khoản Claude AI ($22)</td><td>Mr. Đạt</td><td>Ngày 1</td></tr>
+            <tr><td>5</td><td>Mua Gemini Pro + Tools kết nối</td><td>Mr. Đạt</td><td>Ngày 1</td></tr>
+            <tr><td>6</td><td>Mua Capcut Pro (1,7tr)</td><td>Nhân sự</td><td>Ngày 1</td></tr>
+            <tr><td>7</td><td>Cung cấp ảnh thực tế resort + vườn trà</td><td>Dragon Legend</td><td>Ngày 1</td></tr>
+            <tr><td>8</td><td>Cung cấp video drone rừng trà sẵn có</td><td>Dragon Legend</td><td>Ngày 1</td></tr>
+            <tr><td>9</td><td>Bảng giá gói nghỉ dưỡng + tour trà đạo</td><td>Dragon Legend</td><td>Ngày 1</td></tr>
+            <tr><td>10</td><td>Training nhân sự Ngày 1</td><td>Mr. Đạt</td><td>Ngày 1</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="section-title">Lợi Thế AI Đặc Thù Cho Dragon Legend</div>
+        <div style="background:var(--light);border-radius:12px;padding:18px;margin-bottom:14px;">
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center;margin-bottom:12px;">
+            <div style="width:38px;height:38px;background:linear-gradient(135deg,var(--forest),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;">🌿</div>
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--forest);">AI tạo cảnh sương mù không cần quay thực tế</div>
+              <div style="font-size:11px;color:var(--muted);">Kling/Veo tạo video rừng trà bình minh 4K từ prompt</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center;margin-bottom:12px;">
+            <div style="width:38px;height:38px;background:linear-gradient(135deg,#7c3aed,#a855f7);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;">🎭</div>
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--forest);">AI KOL "Thiên" — hướng dẫn viên ảo 24/7</div>
+              <div style="font-size:11px;color:var(--muted);">HeyGen tạo avatar dẫn tour ảo vườn trà cổ thụ</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center;margin-bottom:12px;">
+            <div style="width:38px;height:38px;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;">🌐</div>
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--forest);">Nội dung song ngữ Việt–Anh tự động</div>
+              <div style="font-size:11px;color:var(--muted);">Tiếp cận khách nước ngoài tìm trải nghiệm bản địa</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center;">
+            <div style="width:38px;height:38px;background:linear-gradient(135deg,#059669,#10b981);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;">🛒</div>
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--forest);">TikTok Shop trà tích hợp với content</div>
+              <div style="font-size:11px;color:var(--muted);">1 video bán cả booking lẫn hộp trà — 2 dòng tiền</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Cam Kết Từ Mr. Đạt</h4>
+          <ul>
+            <li>Training nhân sự đến khi làm được độc lập</li>
+            <li>Cung cấp toàn bộ prompt, workflow, SOP</li>
+            <li>Review kết quả hàng tuần với BGĐ</li>
+            <li>Điều chỉnh chiến lược theo dữ liệu thực tế</li>
+            <li>Hỗ trợ đến khi đạt KPI theo đánh giá BGĐ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="page-num-dark">10</span>
+  <span class="logo-mark-dark">DRAGON LEGEND TEA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 11: BACK COVER
+══════════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-back">
+    <div style="background:rgba(201,168,76,0.15);border:1px solid var(--gold);color:var(--gold);padding:6px 20px;border-radius:20px;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:30px;">
+      Dragon Legend Tea Resort × AI Marketing System
+    </div>
+
+    <div class="big-quote">
+      "Cây trà 800 năm tuổi đã kể câu chuyện của mình<br>
+      qua từng mùa sương khói.<br>
+      Bây giờ, <span>AI sẽ kể câu chuyện đó<br>
+      đến hàng triệu người</span><br>
+      — mỗi ngày, không ngừng nghỉ."
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="small-note">
+      Sẵn sàng xây Cỗ Máy Nội Dung Tự Động cho Dragon Legend Tea Resort.<br>
+      Hệ thống hoạt động 24/7 — tạo ra booking và đơn trà ngay cả khi bạn đang ngủ.
+    </div>
+
+    <div class="contact-row">
+      <div class="contact-item">
+        <div class="c-label">Người Đề Xuất</div>
+        <div class="c-val">Lê Tiến Đạt</div>
+      </div>
+      <div style="width:1px;background:rgba(255,255,255,0.1);height:48px;align-self:center;"></div>
+      <div class="contact-item">
+        <div class="c-label">Email</div>
+        <div class="c-val">ledat.meet@gmail.com</div>
+      </div>
+      <div style="width:1px;background:rgba(255,255,255,0.1);height:48px;align-self:center;"></div>
+      <div class="contact-item">
+        <div class="c-label">Địa Điểm</div>
+        <div class="c-val">Suối Giàng · Yên Bái</div>
+      </div>
+      <div style="width:1px;background:rgba(255,255,255,0.1);height:48px;align-self:center;"></div>
+      <div class="contact-item">
+        <div class="c-label">Tháng Bắt Đầu</div>
+        <div class="c-val">Tháng 7 · 2026</div>
+      </div>
+    </div>
+
+    <span class="page-num">11 / 11</span>
+    <span class="logo-mark">DRAGON LEGEND TEA · AI MARKETING PLAN</span>
+  </div>
+</div>
+
+</body>
+</html>
