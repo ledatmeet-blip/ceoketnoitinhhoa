@@ -4,8 +4,9 @@
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/images/(.*)", "dest": "/images/$1" },
     { "src": "/lamour-marketing-plan.html", "dest": "/lamour-marketing-plan.html" },
+    { "src": "/suoi-giang-marketing-plan.html", "dest": "/suoi-giang-marketing-plan.html" },
     { "src": "/(.*\\.html)", "dest": "/$1" },
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/", "dest": "/lamour-marketing-plan.html" },
+    { "src": "/(.*)", "dest": "/lamour-marketing-plan.html" }
   ]
 }
