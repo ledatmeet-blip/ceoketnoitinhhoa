@@ -1,27 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "**/*",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/lamour-marketing-plan.html"
-    },
-    {
-      "src": "/(.*\\.html)",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/lamour-marketing-plan.html"
-    }
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/images/(.*)", "dest": "/images/$1" },
+    { "src": "/lamour-marketing-plan.html", "dest": "/lamour-marketing-plan.html" },
+    { "src": "/(.*\\.html)", "dest": "/$1" },
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

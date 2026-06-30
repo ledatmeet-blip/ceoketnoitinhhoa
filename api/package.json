@@ -1,0 +1,8 @@
+{
+  "name": "ceo-ket-noi-api",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0"
+  }
+}
