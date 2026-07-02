@@ -1,7 +1,15 @@
-const { sql } = require('@vercel/postgres');
+const { neon } = require('@neondatabase/serverless');
 
+let _sql = null;
 let _tableReady = false;
-async function ensureTable() {
+
+function getSql() {
+  if (!process.env.DATABASE_URL) return null;
+  if (!_sql) _sql = neon(process.env.DATABASE_URL);
+  return _sql;
+}
+
+async function ensureTable(sql) {
   if (_tableReady) return;
   await sql`
     CREATE TABLE IF NOT EXISTS site_data (
@@ -19,22 +27,22 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'GET')    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
 
-  // If database is not configured yet, return empty gracefully
-  if (!process.env.POSTGRES_URL) return res.json({});
+  const sql = getSql();
+  if (!sql) return res.json({}); // DB not configured yet — fallback to localStorage
 
   try {
-    await ensureTable();
+    await ensureTable(sql);
 
     const { key } = req.query;
     if (key) {
-      const { rows } = await sql`SELECT value FROM site_data WHERE key = ${key}`;
+      const rows = await sql`SELECT value FROM site_data WHERE key = ${key}`;
       if (!rows.length) return res.status(404).json({ error: 'Not found' });
       return res.json({ value: rows[0].value });
     }
 
-    const { rows } = await sql`SELECT key, value FROM site_data ORDER BY updated_at DESC`;
+    const rows = await sql`SELECT key, value FROM site_data ORDER BY updated_at DESC`;
     const result = {};
     rows.forEach(r => { result[r.key] = r.value; });
     return res.json(result);

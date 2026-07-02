@@ -2454,9 +2454,18 @@ function smClearImg(){
   document.getElementById('sm-img-ph').style.display='block';
 }
 
-function saveShowcaseProduct(){
+async function saveShowcaseProduct(){
   const name=(document.getElementById('sm-name').value||'').trim();
   if(!name){alert('Vui lòng nhập tên sản phẩm');document.getElementById('sm-name').focus();return;}
+
+  // Upload product image to Blob if it's a base64 data URI (live domain only)
+  let imgSrc = _scImgBase64;
+  if (imgSrc && imgSrc.startsWith('data:image') && _IS_LIVE) {
+    const prodKey = 'prod-' + (_scEditId || Date.now());
+    const url = await _uploadBase64ToBlob(prodKey, imgSrc);
+    if (url) { imgSrc = url; _scImgBase64 = url; }
+  }
+
   const prods=loadShowcaseProds();
   const obj={
     id:_scEditId||('p'+Date.now()),
@@ -2466,7 +2475,7 @@ function saveShowcaseProduct(){
     oldPrice:(document.getElementById('sm-oldprice').value||'').trim(),
     badge:(document.getElementById('sm-badge').value||'').trim(),
     catId:document.getElementById('sm-cat').value,
-    img:_scImgBase64,
+    img:imgSrc,
     link:(document.getElementById('sm-link').value||'').trim(),
   };
   if(_scEditId){
@@ -3173,7 +3182,7 @@ function disableAdmin(){
   closeAdminPanel();
 }
 
-// ===== DATABASE SYNC LAYER =====
+// ===== DATABASE + BLOB SYNC LAYER =====
 const _IS_LIVE = !['localhost','127.0.0.1',''].includes(window.location.hostname);
 const _DB_SYNC_RE = [
   /^ceo-profiles-v2$/,
@@ -3187,6 +3196,8 @@ const _DB_SYNC_RE = [
   /^ceo_img_/,
 ];
 const _lsSet = localStorage.setItem.bind(localStorage);
+
+// On page load: fetch all data from DB → populate localStorage before first render
 const _dbReady = _IS_LIVE
   ? Promise.race([
       fetch('/api/read').then(r => r.ok ? r.json() : null),
@@ -3201,6 +3212,7 @@ const _dbReady = _IS_LIVE
     .catch(() => {})
   : Promise.resolve();
 
+// Write a key-value pair to Neon DB
 async function _dbWrite(key, value) {
   if (!_IS_LIVE) return;
   try {
@@ -3213,10 +3225,67 @@ async function _dbWrite(key, value) {
   } catch (e) { console.warn('[DB] Write failed:', e.message); }
 }
 
+// Upload a base64 data URI to Vercel Blob → returns public CDN URL
+async function _uploadBase64ToBlob(key, base64) {
+  if (!_IS_LIVE || !base64 || !base64.startsWith('data:image')) return null;
+  try {
+    const blobRes = await fetch(base64);
+    const fileBlob = await blobRes.blob();
+    const ext = (fileBlob.type || 'image/jpeg').split('/')[1]?.replace('jpeg','jpg') || 'jpg';
+    const filename = key.replace(/[^a-z0-9]/gi, '-').toLowerCase().slice(0, 60) + '.' + ext;
+    const uploadRes = await fetch('/api/upload', {
+      method: 'POST',
+      headers: {
+        'Content-Type': fileBlob.type || 'image/jpeg',
+        'x-admin-email': _AE,
+        'x-admin-pass': _AP,
+        'x-filename': filename,
+      },
+      body: fileBlob,
+    });
+    if (!uploadRes.ok) return null;
+    const { url } = await uploadRes.json();
+    return url || null;
+  } catch (e) { console.warn('[Blob] Upload failed:', e.message); return null; }
+}
+
+// Smart sync: detect base64 images → upload to Blob CDN, then sync URL to DB
+async function _syncKeyValue(key, value) {
+  if (!value) { _dbWrite(key, value); return; }
+
+  // Case 1: standalone base64 image (e.g. ceo_img_* keys)
+  if (value.startsWith('data:image')) {
+    const url = await _uploadBase64ToBlob(key, value);
+    if (url) { _lsSet(key, url); _dbWrite(key, url); }
+    else _dbWrite(key, value);
+    return;
+  }
+
+  // Case 2: JSON object with base64 .src field (gallery tile items)
+  if (value[0] === '{') {
+    try {
+      const obj = JSON.parse(value);
+      if (obj.src && obj.src.startsWith('data:image')) {
+        const url = await _uploadBase64ToBlob(key + '-img', obj.src);
+        if (url) {
+          const updated = JSON.stringify({ ...obj, src: url });
+          _lsSet(key, updated);
+          _dbWrite(key, updated);
+          return;
+        }
+      }
+    } catch {}
+  }
+
+  // Default: sync text/JSON as-is
+  _dbWrite(key, value);
+}
+
+// Intercept all localStorage writes when admin is active
 localStorage.setItem = function(key, value) {
   _lsSet(key, value);
   if (!window.adminMode || !_IS_LIVE) return;
-  if (_DB_SYNC_RE.some(p => p.test(key))) _dbWrite(key, value);
+  if (_DB_SYNC_RE.some(p => p.test(key))) _syncKeyValue(key, value);
 };
 
 // ===== ADMIN LOGIN =====

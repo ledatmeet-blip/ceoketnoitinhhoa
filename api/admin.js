@@ -1,7 +1,15 @@
-const { sql } = require('@vercel/postgres');
+const { neon } = require('@neondatabase/serverless');
 
+let _sql = null;
 let _tableReady = false;
-async function ensureTable() {
+
+function getSql() {
+  if (!process.env.DATABASE_URL) return null;
+  if (!_sql) _sql = neon(process.env.DATABASE_URL);
+  return _sql;
+}
+
+async function ensureTable(sql) {
   if (_tableReady) return;
   await sql`
     CREATE TABLE IF NOT EXISTS site_data (
@@ -20,11 +28,10 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST')   return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  if (!process.env.POSTGRES_URL) {
-    return res.status(503).json({ error: 'Database not configured' });
-  }
+  const sql = getSql();
+  if (!sql) return res.status(503).json({ error: 'Database not configured' });
 
   const body = req.body || {};
   const { adminEmail, adminPass, key, value, action } = body;
@@ -40,14 +47,14 @@ module.exports = async (req, res) => {
   if (!key) return res.status(400).json({ error: 'key is required' });
 
   try {
-    await ensureTable();
+    await ensureTable(sql);
 
     if (action === 'delete') {
       await sql`DELETE FROM site_data WHERE key = ${key}`;
       return res.json({ success: true, action: 'deleted', key });
     }
 
-    // Value arrives as parsed JSON from req.body — re-stringify for JSONB cast
+    // Normalize value: Neon expects a JS value for JSONB, not a JSON string
     const jsonValue = typeof value === 'string' ? value : JSON.stringify(value);
 
     await sql`
